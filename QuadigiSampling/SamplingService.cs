@@ -29,7 +29,7 @@ namespace QuadigiSampling
                 .OrderBy(m => m.MeasurementTime)
                 .GroupBy(m => m.MeasurementType);
 
-            //2. for each, get interval index into a dictionary. Then, pick the last.
+            //2. for each measurement type, group by interval and pick last.
             var result = new List<Measurement>();
             foreach(var group in groupedByTypeAndOrderedByTime)
             {
